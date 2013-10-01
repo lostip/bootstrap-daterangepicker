@@ -65,7 +65,7 @@
                 click: $.proxy(this.show, this),
                 focus: $.proxy(this.show, this)
             });
-        } else {
+        } else if (!this.element.is('select')) { //safari is the only browser to trigger click for selects
             this.element.on('click', $.proxy(this.show, this));
         }
 
